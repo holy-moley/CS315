@@ -1,0 +1,119 @@
+p{
+    margin: 5px 0 5px 0;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:medium
+}
+div{
+    p:first-line{
+        font-style:italic;
+    }
+    p:first-letter{
+        color:darkblue;
+        font-size:large;
+    }
+}
+h1{
+    margin: 20px 0 5px 0;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:large
+}
+/*Consistent image sizing for the info page.*/
+#DList{
+    img{height:25%;
+    width:25%;}
+}
+
+#bunblock{
+    display:block;
+    height:fit-content;
+    width:fit-content;
+    padding:15px;
+    background:url('../images/bunbackground.png');
+    background-size:contain;
+    background-position:50%;
+    background-repeat:no-repeat;
+    border:10px solid transparent;
+    border-image:url('../images/bunborder.png') 30 round;
+
+}
+#scrollybox{
+    background-color:lightblue;
+    border-radius:50%;
+    margin:30px;
+    padding: 30px 15px 0px 15px;
+    border-radius:50px;
+    height:200px;
+    width:200px;
+    overflow:scroll;
+}
+
+/*Navigation bar settings.*/
+nav{
+    
+    /*Settings to make the logo relatively consistent in size.*/
+    img{ 
+    height:10%;
+    width:10%;
+    background-color:deepskyblue;}
+    /*This is what makes the nav bar horizontal.*/
+    ul{
+        list-style-type:none;
+        margin:0;
+        padding:0;
+        overflow:auto;
+    }
+    ul li{float:left;}
+    ul li a{
+        display:block;
+        text-align:center;
+        padding: 14px 16px;
+        text-decoration:none;
+    }
+    background-color:lightblue
+
+}
+/*Took a long time to figure out how to get this working.*/
+a[href$=".pdf"] {
+    background:url('../images/pdficon.png');
+    background-size: auto 100%;
+    background-repeat:no-repeat;
+    vertical-align:middle;
+    padding-left:16px;
+    padding-right:16px;
+}
+a[href$=".docx"]{
+    background:url('../images/wordicon.png');
+    background-size: auto 100%;
+    background-repeat:no-repeat;
+    vertical-align:middle;
+    padding-left:16px;
+    padding-right:16px;
+}    
+/*Wasn't sure if the italicized text in the original also needed to be CSS, but didn't want to risk it.*/
+#italicized{
+    font-style: italic;
+}
+article>h1{color:brown;}
+aside+p{color:darkgoldenrod;}
+/*All the customization on the nav bar.*/
+a:link{
+    text-decoration:dotted;
+    color:springgreen;
+}
+a:hover{
+    font-weight:bold;
+}
+a:visited{
+    color:green;
+}
+.NavInfo{
+    background-color:cadetblue;
+}
+.NavAbout{
+    background-color:aquamarine
+}
+.NavContact{
+    background-color:azure;
+}

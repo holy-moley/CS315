@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Quiz Challenge</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+    <body>
+        <header>
+        <h1>JavaScript Quiz Challenge</h1>
+        <p>Answer as many questions as possible before the timer runs out!</p>
+        </header>
+    <main>
+        <section id="game">
+            <!--Contains all the input used for the game.-->
+            <p id="question">Click "Start Game" to begin!</p>
+            <input type="text" id="answer" placeholder="Type your answer" disabled>
+            <br><br>
+            <button id="submitBtn" onClick="submitAnswer()" disabled>Submit</button>
+            <button id="startBtn" onClick="startGame()">Start Game</button>
+            <p id="score">Score: 0</p>
+            <p id="timer">Time: 60s</p>
+        </section>
+        <!--Could be its own section, maybe should, but since it's a single paragraph, 
+        I decided to just put it beneath the game section.
+        After the first round, will only contain your last score. A high score function could be implemented.-->
+        <p id="scoreMessage"></p>
+    </main>
+    <footer>
+        <p>Created by Travis Burkhardt, 10/21/2025.</p>
+    </footer>
+    <!--This is what imports the javascript.-->
+    <script type="module" src="js/main.js"></script>
+    </body>
+</html>

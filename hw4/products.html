@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!--Nav-->
+<nav class="navBar">
+    <div class="navBrand">Generic website</div>
+    <button class="navToggle" onclick="toggleNav()">&#9776;</button>
+    <ul id="navLinks" class="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+<!-- JS for hamburger -->
+<script>
+function toggleNav() {
+    var navLinks = document.getElementById('navLinks');
+    if (navLinks.className.indexOf('active') === -1) {
+        navLinks.className += ' active';
+    } else {
+        navLinks.className = navLinks.className.replace(' active', '');
+    }
+}
+</script>
+
+
+<main id="products-page">
+    <!-- Sidebar -->
+<aside id="sidebar">
+    <h2>Categories</h2>
+    <ul>
+        <li><a href="#" class="all" onclick="filterProducts('all')">All</a></li>
+        <li><a href="#" class="cat1" onclick="filterProducts('cat1')">Edible</a></li>
+        <li><a href="#" class="cat2" onclick="filterProducts('cat2')">Peel it first</a></li>
+        <li><a href="#" class="cat3" onclick="filterProducts('cat3')">Don't eat that</a></li>
+    </ul>
+</aside>
+
+    <!-- Product Grid -->
+    <section id="product-grid">
+        <!--Each product is a little card with a description and a buy now button.-->
+        <!--The button doesn't do anything.-->
+        <div class="product cat1">
+            <img src="images/apple.jpg" alt="Apple">
+            <h3>Apple!</h3>
+            <p>This one did fall pretty far from the tree</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="product cat2">
+            <img src="images/banana.jpg" alt="Banana">
+            <h3>Banana</h3>
+            <p>A favorite of monkeys</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="product cat2">
+            <img src="images/kiwi.jpg" alt="Kiwi">
+            <h3>Kiwi</h3>
+            <p>Not a New Zealander</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="product cat2">
+            <img src="images/orange.jpg" alt="Orange">
+            <h3>Orange</h3>
+            <p>Cutting edge anti-scurvy technology</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="product cat1">
+            <img src="images/strawberry.jpg" alt="Strawberry">
+            <h3>Strawberry</h3>
+            <p>Not actually bigger than the orange</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="product cat3">
+            <img src="images/knife.jpg" alt="Knife">
+            <h3>A Knife</h3>
+            <p>wait how did that get here</p>
+            <button>Buy Now</button>
+        </div>
+    </section>
+</main>
+    <footer>
+        <p>Travis Burkhardt, 2025</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </footer>
+<script>
+function filterProducts(category) {
+    /*Basic for loop that checks if each product is in the currently selected category.*/
+    var products = document.getElementsByClassName('product');
+    for (var i = 0; i < products.length; i++) {
+        var product = products[i];
+        if (category === 'all' || product.className.indexOf(category) !== -1) {
+            product.style.display = 'block';
+        } else {
+            product.style.display = 'none';
+        }
+    }
+}
+</script>
+
+</body>
+</html>

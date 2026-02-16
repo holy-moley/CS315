@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!--Nav-->
+    <nav class="navBar">
+        <div class="navBrand">Generic website</div>
+        <button class="navToggle" onclick="toggleNav()">&#9776;</button>
+        <ul id="navLinks" class="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- JS for hamburger -->
+    <script>
+    function toggleNav() {
+        var navLinks = document.getElementById('navLinks');
+        if (navLinks.className.indexOf('active') === -1) {
+            navLinks.className += ' active';
+        } else {
+            navLinks.className = navLinks.className.replace(' active', '');
+        }
+    }
+    </script>
+    <!-- Google Maps Script -->
+    <script>
+        function initMap() {
+            const location = { lat: 51.011179, lng: -114.132866 };
+            const map = new google.maps.Map(document.querySelector('#map'), {
+                center: location,
+                zoom: 14
+            });
+            const marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+        }
+    </script>
+    
+    <main id="contact-page">
+    <!--Form-->
+        <section id="contact-form">
+            <h1>Contact Us</h1>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <input type="text" id="message" name="message" required>
+                <!--I'm not sure what the submit button actually does, aside from resetting input.-->
+                <button type="submit">Send</button>
+            </form>
+        </section>
+        <!-- Info -->
+        <section>
+            <h2>Contact Details</h2>
+            <p>Address: Anywhere in Colima, Mexico</p>
+            <p>Phone: <a href="tel:+11234567890">(123) 456-7890</a></p>
+            <p>Email: <a href="mailto:realemail@aol.com">realemail@aol.com</a></p>
+        </section>
+
+            <!--Map-->
+        <section>
+            <h2>Our Location</h2>
+            <div id="map"></div>
+            <script> 
+                function initMap() { 
+                const map = new google.maps.Map(document.querySelector('#map'), { 
+                center: {lat: 19.245316373877422, 
+                lng: -103.72554558905948}, 
+                zoom: 12, 
+                }); 
+                } 
+            </script>
+        </section>
+
+
+</main>
+
+<footer>
+    <p>Travis Burkhardt, 2025</p>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</footer>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxp1Y9xDX4CpSPDw8N0lpyy1b__J1UhlA&callback=initMap" async defer></script>
+</body>
+</html>

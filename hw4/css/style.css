@@ -1,0 +1,332 @@
+/*Settings for everywhere.*/
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: black;
+    margin:0;
+    align-items: center;
+}
+
+
+/*Footer*/
+footer {
+    background: darkslategrey;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    width: 100%;
+
+}
+
+footer nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/*Navigation*/
+.navBar {
+    display: grid;
+    /* Title | empty space | Hamburger */
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    width: 100%;
+    background-color: darkslategrey;
+    color: white;
+    padding: 0rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navBrand {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/*Burger visible, links not.*/
+.navLinks {
+    display: none;
+    grid-column: 2 / span 2;
+    list-style: none;
+    padding: 1rem;
+    margin:0.5rem;
+    text-align: center;
+
+    
+}
+
+/*Links stacked on mobile.*/
+.navLinks.active {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+}
+
+.navLinks a {
+    color: white;
+    text-decoration: none;
+}
+/*Hamburger*/
+.navToggle {
+    justify-self: end;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/*Used a flex display because it worked better than grid for this specific piece.*/
+@media (min-width: 1024px) {
+    .navLinks {
+        display: flex;
+        justify-content:end;
+        gap: 1.5rem;
+        position: static;
+        background: none;
+        padding: 0;
+    }
+
+    .navToggle {
+        display: none;
+    }
+}
+
+
+/*Index.html*/
+/* Hero section*/
+
+#hero {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto;    
+    border-radius: 10px;
+    overflow: hidden;
+    height: 20rem;
+}
+
+
+#hero-img {
+    width: 100%;
+    height: 100%;
+    /*Results in cropping, but looks better this way.*/
+    object-fit: cover;
+    display: block;
+}
+
+/*Text centered over the hero.*/
+#hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background: rgba(47,79,79,0.75);
+    padding: 1rem 2rem;
+    border-radius: 10px;
+}
+
+/*Sections*/
+/*Flex would work fine here but I didn't want to risk it due to the assignment requirements.*/
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.featured {
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+
+
+/*Products.html*/
+
+
+/* Products Page Layout  */
+#products-page {
+    display: grid;
+    grid-template-columns: 1fr; /*Single column; filters are just on top. */
+    gap: 1rem;
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+/* Sidebar*/
+#sidebar {
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 8px;
+    h2{
+        margin-bottom:1rem;
+    }
+    ul{
+        list-style:none;
+    }
+    ul li {
+    margin-bottom: 0.5rem;}
+    ul li a {
+    color: rgb(73, 73, 73);}
+}
+
+/*Product grid, gets weird if I have it as an ID.*/
+#product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+/*Product card*/
+.product {
+    border: 1px solid #6e6e6e;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 8px;
+}
+/*Breaks when I put it into the main product thing for some reason.*/
+.product img {
+    max-width: 100%;
+    max-height:60%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem auto;
+}
+
+.product button {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+/*Tablet*/
+@media (min-width: 768px) {
+    #products-page {
+        /* Sidebar | Products */
+        grid-template-columns: 250px 1fr; 
+    }
+    #product-grid {
+        /*Two product columns.*/
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/*Desktop*/
+@media (min-width: 1024px) {
+    #product-grid {
+        grid-template-columns: repeat(3, 1fr); /* three columns of products */
+    }
+}
+
+
+/*About.html*/
+/* About page main */
+#about-page {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    display: grid;
+    gap: 2rem;
+}
+
+
+/* Image gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+}
+}
+
+
+/* Team section */
+#team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    width: 100%;
+    max-width: 200px;
+    display: block;
+    margin: auto;
+}
+
+/*Tablet*/
+@media (min-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*Desktop*/
+@media (min-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/*Contact*/
+#contact-page {
+    max-width: 1200px;
+    display: grid;
+    gap: 2rem;
+}
+
+/* Form */
+#contact-form{ 
+    input, textarea{    
+        width: 100%;
+        border: 1px solid #cacaca;}
+    button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: none;
+    background-color: #222;
+    color: white;
+    border-radius: 6px;
+}
+}
+
+#map{
+    height:400px;
+    width:100%;
+    border-radius:8px;
+}
+/*Tablet*/
+@media(min-width: 768px){
+    #contact-page {
+        grid-template-columns: 1fr 1fr; /* form on left, map/details on right */
+    }
+
+
+}
+/*Desktop*/
+@media(min-width: 1024px){
+    #contact-page {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+

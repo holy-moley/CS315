@@ -1,0 +1,58 @@
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: darkslategrey;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    transition: all 0.3s ease; 
+    z-index: 1000;
+}
+
+/* Still shrinks on scroll */
+.navbar.scrolled {
+    padding: 8px 20px;
+    background: #1e3b3b;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Hamburger */
+.hamburger {
+    font-size: 1.5rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    z-index: 1100;
+}
+
+/* Mobile nav links hidden by default */
+.nav-right {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease;
+    background: darkslategrey;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 900;
+}
+
+/* Shows menu when active*/
+.nav-right.active {
+    max-height: 500px; /* adjust if needed */
+}
+
+/* Mobile link styles */
+.nav-right a {
+    padding: 10px 20px;
+    border-top: 1px solid #444;
+}

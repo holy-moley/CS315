@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!--Nav-->
+<nav class="navBar">
+    <div class="navBrand">Generic website</div>
+    <button class="navToggle" onclick="toggleNav()">&#9776;</button>
+    <ul id="navLinks" class="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+<!-- JS for hamburger -->
+<script>
+function toggleNav() {
+    var navLinks = document.getElementById('navLinks');
+    if (navLinks.className.indexOf('active') === -1) {
+        navLinks.className += ' active';
+    } else {
+        navLinks.className = navLinks.className.replace(' active', '');
+    }
+}
+</script>
+
+
+<main>
+    <section>
+        <h1>About Us</h1>
+        <p>We are a completely normal corporate entity.</p>
+    </section>
+
+    <!--Gallery-->
+    <section>
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <figure>
+                <img src="images/HQ1.jpg" alt="Gallery image 1">
+                <figcaption>Our lovely headquarters!</figcaption>
+            </figure>
+            <figure>
+            <img src="images/HQ2.jpg" alt="Gallery image 2">
+                <figcaption>The carpet is very wet.</figcaption>
+            </figure>
+            <figure>
+
+            <img src="images/HQ3.jpg" alt="Gallery image 3">
+            <figcaption>We do not validate parking.</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!--Team Section-->
+    <section>
+        <h2>Our Team</h2>
+        <div id="team-grid">
+            <div class="team-member">
+                <img src="images/taxfraud.png" alt="Taxy McFraud">
+                <h3>Taxy McFraud</h3>
+                <p>CEO & Founder</p>
+            </div>
+            <div class="team-member">
+                <img src="images/MissDemeanor.jpg" alt="Miss Demeanor">
+                <h3>Ms. Demeanor</h3>
+                <p>Not A Criminal</p>
+            </div>
+            <div class="team-member">
+                <img src="images/knife.jpg" alt="A Knife">
+                <h3>A Knife</h3>
+                <p>wait why are you here too</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>Travis Burkhardt, 2025</p>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</footer>
+
+</body>
+</html>
